@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rcoem.enotice.enotice_app">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:name=".EnoticeApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".LoginSignUpClasses.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".AdminClasses.AccountActivityAdmin" />
+        <activity android:name=".UserClasses.AccountActivityUser" />
+        <activity android:name=".LoginSignUpClasses.MainIntroActivity" />
+        <activity android:name=".LoginSignUpClasses.SignUp" />
+        <activity android:name=".AdminApprovalClasses.RetriverData" />
+        <activity
+            android:name=".EditViewProfile"
+            android:label="Profile" />
+        />
+        <activity android:name=".UserNoticeStatusClasses.UserNoticeStatus" />
+        <activity android:name=".fullScreenImage" />
+        <activity android:name=".LoginSignUpClasses.AwatingForApproval" />
+        <activity android:name=".AuthorityClasses.AccountAdminPanel" />
+        <activity android:name=".AuthorityClasses.AdminApprove" />
+        <activity android:name=".pdfview" />
+        <activity android:name=".AdminClasses.BlockUserPlanel" />
+        <activity android:name=".AdminClasses.CrossDept" />
+        <activity android:name=".NotificationClasses.ActivitySendPushNotification" />
+        <activity android:name=".AddNoticeClasses.AddNoticeTabbed" />
+        <activity android:name=".AdminApprovalClasses.TextNoticeApproval" />
+        <activity android:name=".AdminApprovalClasses.ImageNoticeApproval" />
+        <activity android:name=".AdminApprovalClasses.DocNoticeApproval" />
+        <activity android:name=".AdminClasses.TextNoticeAdmin" />
+        <activity android:name=".UserClasses.TextNoticeUser" />
+        <activity android:name=".AdminClasses.DocNoticeAdmin" />
+        <activity android:name=".UserClasses.DocNoticeUser" />
+        <activity android:name=".AdminClasses.ImageNoticeAdmin" />
+        <activity android:name=".UserClasses.ImageNoticeUser" />
+        <activity android:name=".UserNoticeStatusClasses.UserTextNoticeStatus" />
+        <activity android:name=".UserNoticeStatusClasses.UserImageNoticeStatus" />
+        <activity android:name=".UserNoticeStatusClasses.UserDocNoticeStatus" />
+        <activity android:name=".UserNoticeStatusClasses.UserImageRejectStatus" />
+        <activity android:name=".UserNoticeStatusClasses.UserTextRejectStatus" />
+        <activity android:name=".UserNoticeStatusClasses.UserDocRejectStatus" />
+
+        <!-- Services -->
+        <service android:name=".NotificationClasses.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".NotificationClasses.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".HighAuthorityClasses.AccountActivityAuthority" />
+        <activity android:name=".HighAuthorityClasses.AddNoticeTabbedAuthority" />
+        <activity android:name=".HighAuthorityClasses.BlockUserPanelAuthority" />
+        <activity android:name=".LoginSignUpClasses.PasswordResetActivity" />
+        <activity android:name=".AuthorityClasses.AdminNotApproved" />
+        <activity
+            android:name=".AboutUs"
+            android:theme="@style/AppTheme.MaterialAboutActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".HighAuthorityClasses.BlockUserPanelAuthority" />
+        <activity android:name=".AdminClasses.NoticeArchivesActivity"></activity>
+    </application>
+
+</manifest>
